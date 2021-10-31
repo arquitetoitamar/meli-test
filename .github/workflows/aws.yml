@@ -32,13 +32,13 @@ on:
       - master
 
 env:
-  AWS_REGION: us-east-2                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: 248708849970.dkr.ecr.us-east-2.amazonaws.com/meli-test           # set this to your Amazon ECR repository name
-  ECS_SERVICE: meli-app-service                 # set this to your Amazon ECS service name
-  ECS_CLUSTER: meli-test                      # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: first-run-task-definition:1 # set this to the path to your Amazon ECS task definition
+  AWS_REGION: us-east-1                   # set this to your preferred AWS region, e.g. us-west-1
+  ECR_REPOSITORY: meli-test           # set this to your Amazon ECR repository name
+  ECS_SERVICE: tomcat-webserver-service                 # set this to your Amazon ECS service name
+  ECS_CLUSTER: meli                     # set this to your Amazon ECS cluster name
+  ECS_TASK_DEFINITION: first-run-task-definition # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: meli-test           # set this to the name of the container in the
+  CONTAINER_NAME: meli          # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
 jobs:
