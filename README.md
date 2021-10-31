@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Meli DNA Test Java Skills for back dev
 
 
@@ -35,3 +36,6 @@ NEO4J_USER: <br>
 NEO4J_PASSWORD: <br>
 NEO4J_DATABASE: meli <br>
 NEO4J_VERSION: 4 <br>
+=======
+# meli-test
+>>>>>>> 92eceb2ec0301deb7cbdb547993287a2ce5f4726
