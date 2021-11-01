@@ -42,5 +42,5 @@ http://54.159.139.0:7474/browser/
 Get Relationships <br>
 
 MATCH p=()-[r:CODON_IN]->() RETURN p LIMIT 25 <br>
-![alt text](https://github.com/imktec/meli-test/tree/master/github/dna.gif "Logo Title Text 1")
+![alt text](https://github.com/imktec/meli-test/blob/master/github/dna.gif "Exemplo 1")
 
