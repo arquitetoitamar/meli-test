@@ -13,7 +13,7 @@ It provides object-graph mapping (OGM) functionality and other features common t
  * https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm
  
 ### Documentation
-http://localhost:8080/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
+https://agile-tor-46740.herokuapp.com/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
 ## The Stack
 
 These are the components of our Rest Application:
@@ -40,7 +40,9 @@ NEO4J_VERSION: 4 <br>
 http://54.159.139.0:7474/browser/
 
 Get Relationships <br>
+```
+MATCH p=()-[r:CODON_IN]->() RETURN p LIMIT 25
+```
 
-MATCH p=()-[r:CODON_IN]->() RETURN p LIMIT 25 <br>
 ![alt text](https://github.com/imktec/meli-test/blob/master/github/dna.gif "Exemplo 1")
 
