@@ -3,6 +3,7 @@
 version: 2.1
 orbs:
   aws-ecr: circleci/aws-ecr@7.2.0
+  
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
@@ -27,17 +28,19 @@ jobs:
       - run:
           name: Test
           command: mvn test
-
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
-workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
-    jobs:
-      - build-and-test
       - aws-ecr/build-and-push-image:
             account-url: AWS_ECR_ACCOUNT_URL 
             aws-access-key-id: AWS_ACCESS_KEY_ID 
             aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
             dockerfile: Dockerfile 
             repo: meli
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  sample:
+    jobs: # This is the name of the workflow, feel free to change it to better match your workflow.
+      # Inside the workflow, you define the jobs you want to run.
+      - build-and-test
+      
+      
+      
