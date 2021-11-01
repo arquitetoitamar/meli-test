@@ -145,27 +145,15 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<!-- Docker -->
-			<!--<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
-				<version>1.4.10</version>
-				<executions>
-					<execution>
-						<id>default</id>
-						<goals>
-							<goal>build</goal>
-							&lt;!&ndash; <goal>push</goal> &ndash;&gt;
-						</goals>
-					</execution>
-				</executions>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
 				<configuration>
-					<repository>248708849970.dkr.ecr.us-east-2.amazonaws.com/meli</repository>
-					<tag>${project.version}</tag>
-					<dockerfile>Dockerfile</dockerfile>
-					<skipDockerInfo>true</skipDockerInfo>
+					<source>11</source>  <!-- same as <java.version> -->
+					<target>11</target>    <!-- same as <java.version> -->
 				</configuration>
-			</plugin>-->
+			</plugin>
 		</plugins>
 	</build>
 </project>
