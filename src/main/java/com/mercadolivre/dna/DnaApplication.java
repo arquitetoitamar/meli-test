@@ -2,6 +2,7 @@ package com.mercadolivre.dna;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
+import lombok.Generated;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -16,6 +17,7 @@ import org.springframework.context.annotation.PropertySource;
 @EnableConfigurationProperties
 @PropertySource(value = "classpath:application.yml")
 public class DnaApplication {
+    @Generated
     public static void main(String[] args) {
         SpringApplication.run(DnaApplication.class, args);
     }

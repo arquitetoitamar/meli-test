@@ -1,5 +1,5 @@
 Feature: Stats functionalities
-#  @IsSimian
+#  @TagPost
 #  Scenario Outline: Verify if dna sequence is simian
 #    Given the client send a sequence <dna>
 #    When the api response should be <simian>

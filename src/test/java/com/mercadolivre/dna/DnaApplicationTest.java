@@ -22,4 +22,9 @@ public class DnaApplicationTest {
     @Test
     public void contextLoads() {
     }
+
+    @Test
+    public void testApplication() {
+        new DnaApplication();
+    }
 }

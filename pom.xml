@@ -149,6 +149,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>23.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -177,6 +183,27 @@
 							<goal>report</goal>
 						</goals>
 					</execution>
+					<!-- Add this checking -->
+					<execution>
+						<id>jacoco-check</id>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<rule>
+									<element>PACKAGE</element>
+									<limits>
+										<limit>
+											<counter>LINE</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>0.8</minimum>
+										</limit>
+									</limits>
+								</rule>
+							</rules>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 			<plugin>
@@ -184,9 +211,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.20</version>
 				<configuration>
-					<testSourceDirectory>${project.basedir}/src/main/java</testSourceDirectory>
+					<testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
 					<includes>
-						<include>**/*RunCucumberTest.java</include>
+						<include>**/*Test.java</include>
 					</includes>
 					<!-- <excludes> <exclude>**/*RunCukesTest.java</exclude> </excludes> -->
 				</configuration>

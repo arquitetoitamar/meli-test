@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 
 public enum ApiResponseMessage {
     BAD_REQUEST(HttpStatus.BAD_REQUEST,"Invalid Request"),
-    UNKNOW_ERRO(HttpStatus.INTERNAL_SERVER_ERROR,"Unknow Error");
+    UNKNOW_ERRO(HttpStatus.INTERNAL_SERVER_ERROR,"Unknown Error");
 
     private HttpStatus code;
     private String message;
@@ -16,4 +16,11 @@ public enum ApiResponseMessage {
         this.message = messageInformed;
     }
 
+    public HttpStatus getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }

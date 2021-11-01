@@ -26,6 +26,10 @@ public class DnaApiController {
     @Autowired
     private DnaService dnaService;
 
+    public DnaApiController(DnaService dnaService) {
+        this.dnaService = dnaService;
+    }
+
     /**
      * 创建
      *

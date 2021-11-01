@@ -20,6 +20,10 @@ public class StatsApiController {
     @Autowired
     private StatsService statsService;
 
+    public StatsApiController(StatsService statsService) {
+        this.statsService = statsService;
+    }
+
     @Operation(summary = "Get Stats", description = "", tags = {"stats"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Stats of Dnas", content = @Content(mediaType = "application/json", schema = @Schema(implementation = StatsResponseDto.class))),
@@ -27,11 +31,8 @@ public class StatsApiController {
     @GetMapping(value = "/stats",
             produces = {"application/json"})
     public ResponseEntity<StatsResponseDto> getStats() {
-            return ResponseEntity.ok(StatsResponseDto.builder()
-                    .countHumanDna(0)
-                    .countSimianDna(0)
-                    .ratio(0.1)
-                    .build());
+        log.info("Get Stats");
+        return ResponseEntity.ok(statsService.getStats());
     }
 
 }

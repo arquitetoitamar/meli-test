@@ -1,6 +1,7 @@
 package com.mercadolivre.dna.config;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.neo4j.harness.Neo4j;
@@ -11,6 +12,7 @@ import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @DataNeo4jTest
 @Transactional(propagation = Propagation.NEVER)
@@ -33,5 +35,10 @@ public class DatabaseConfigTest {
     @AfterAll
     static void stopNeo4j() {
         embeddedDatabaseServer.close();
+    }
+    @Test
+    public void testCreate(){
+        DatabaseConfig databaseConfig = new DatabaseConfig();
+        assertNotNull(databaseConfig);
     }
 }

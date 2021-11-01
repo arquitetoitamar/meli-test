@@ -13,18 +13,29 @@ import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;
 
+/**
+ *  dna service impl
+ *
+ */
 @Service
 public class DnaServiceImpl implements DnaService {
     @Autowired
     private StatsRepository statsRepository;
-
-    private CalculatorService coreCalculator;
     @Autowired
+    private CalculatorService coreCalculator;
+
     public DnaServiceImpl(StatsRepository statsRepository, CalculatorServiceImpl coreCalculator) {
         this.statsRepository = statsRepository;
         this.coreCalculator = coreCalculator;
     }
 
+    /**
+     * create analysis
+     *
+     * @param dna dna
+     * @return {@link DnaCreateResponseDto}
+     * @see DnaCreateResponseDto
+     */
     public DnaCreateResponseDto createAnalysis(DnaCreateRequestDto dna) {
         String sequence = dna.getBases().stream().collect(Collectors.joining());
         boolean simian = coreCalculator.verifyTypeDna(dna.getBases());

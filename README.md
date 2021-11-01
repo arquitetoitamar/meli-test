@@ -29,12 +29,18 @@ Provision a database quickly with https://sandbox.neo4j.com/?usecase=movies[Neo4
 ### Configuration
 
 PORT: 8080 <br>
-NEO4J_URI: 
-neo4j+s://demo.neo4jlabs.com <br>
-NEO4J_USER: <br>
-NEO4J_PASSWORD: <br>
-NEO4J_DATABASE: meli <br>
+NEO4J_URI: bolt://54.159.139.0:7687<br>
+NEO4J_USER: meli <br>
+NEO4J_PASSWORD: secret123 <br>
+NEO4J_DATABASE: neo4j <br>
 NEO4J_VERSION: 4 <br>
-=======
 
+### Queries Exemples
+
+http://54.159.139.0:7474/browser/
+
+Get Relationships <br>
+
+MATCH p=()-[r:CODON_IN]->() RETURN p LIMIT 25 <br>
+![alt text](https://github.com/imktec/meli-test/tree/master/github/dna.gif "Logo Title Text 1")
 
