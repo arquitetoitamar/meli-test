@@ -1,9 +1,4 @@
 FROM adoptopenjdk/openjdk11:alpine
-VOLUME /tmp
-
-RUN useradd -d /home/appuser -m -s /bin/bash appuser
-USER appuser
-
-ARG JAR_FILE
+ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/app.jar"]
