@@ -27,7 +27,7 @@ public class DnaServiceImpl implements DnaService {
 
     public DnaCreateResponseDto createAnalysis(DnaCreateRequestDto dna) {
         String sequence = dna.getBases().stream().collect(Collectors.joining());
-        boolean simian = coreCalculator.verifyTypeDna(sequence);
+        boolean simian = coreCalculator.verifyTypeDna(dna.getBases());
         Nucleo nucleo = statsRepository.save(Nucleo.builder()
                 .dnaSequence(sequence)
                 .tape(dna.getBases().stream().map(Codon::new)

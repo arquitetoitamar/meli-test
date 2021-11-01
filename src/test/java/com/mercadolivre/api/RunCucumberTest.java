@@ -1,6 +1,6 @@
 package com.mercadolivre.api;
 
-import com.mercadolivre.dna.DnaApplication;
+import com.mercadolivre.dna.DnaApplicationTest;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import io.cucumber.spring.CucumberContextConfiguration;
@@ -16,6 +16,6 @@ import org.springframework.test.context.ActiveProfiles;
         glue = {"com.mercadolivre.api"},
         tags = "@IsSimian")
 @ActiveProfiles(value = "test")
-@SpringBootTest(classes = DnaApplication.class)
+@SpringBootTest(classes = DnaApplicationTest.class)
 public class RunCucumberTest {
 }

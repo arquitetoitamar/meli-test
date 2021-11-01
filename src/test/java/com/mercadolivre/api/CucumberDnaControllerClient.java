@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
 
-@FeignClient(value="simple-books-client", url="http://localhost:8080")
+@FeignClient(name = "feignClient",value="simple-books-client", url="http://localhost:8080", qualifiers = {"feignClient"})
 public interface CucumberDnaControllerClient {
     @RequestMapping(value = "/simian",
             produces = { "application/json" },

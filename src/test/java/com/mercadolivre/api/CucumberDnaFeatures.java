@@ -1,43 +1,40 @@
 package com.mercadolivre.api;
 
-import com.mercadolivre.dna.dto.DnaCreateRequestDto;
-import com.mercadolivre.dna.dto.DnaCreateResponseDto;
-import io.cucumber.java.ParameterType;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Slf4j
 public class CucumberDnaFeatures {
-    @ParameterType(name = "dna",value = "(.*)")
-    public List<String> dna(String dna) {
-        return List.of(dna.split(","));
-    }
+//    @ParameterType(name = "dna",value = "(.*)")
+//    public List<String> dna(String dna) {
+//        log.info(dna);
+//        return Arrays.asList(dna.split(",").clone());
+//    }
 
     @Autowired
+    @Qualifier("feignClient")
     private CucumberDnaControllerClient client;
 
     private Boolean returnedIsSimian = false;
-    @Given("the client send a sequence {dna}")
-    public void the_client_send_a_sequence(List<String> dna) {
-        log.info(dna.toString());
-        ResponseEntity<DnaCreateResponseDto> response = client.analiseDna(DnaCreateRequestDto.builder()
-                .bases(dna)
-                .build());
-        returnedIsSimian = response.getBody().getIsSimian();
-    }
 
-    @When("the api response should be (.*)")
-    public void the_api_response_should_be(String simian) {
-        log.info(simian);
-        assertEquals(Boolean.valueOf(simian), returnedIsSimian);
+    public CucumberDnaFeatures(CucumberDnaControllerClient client) {
+        this.client = client;
     }
+//    @Given("the client send a sequence {string}")
+//    public void the_client_send_a_sequence(String string) {
+//        log.info(string.toString());
+//        ResponseEntity<DnaCreateResponseDto> response = client.analiseDna(DnaCreateRequestDto.builder()
+//                .bases(Arrays.asList(string.split(",").clone()))
+//                .build());
+//        returnedIsSimian = response.getBody().getIsSimian();
+//    }
+
+//    @When("the api response should be (.*)")
+//    public void the_api_response_should_be(String simian) {
+//        log.info(simian);
+//        assertEquals(Boolean.valueOf(simian), returnedIsSimian);
+//    }
 
 
 //    @When("^I put (\\d+) (\\w+) in the bag$")

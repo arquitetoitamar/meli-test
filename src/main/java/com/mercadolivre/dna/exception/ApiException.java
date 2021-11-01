@@ -1,4 +1,4 @@
-package com.mercadolivre.dna.exeception;
+package com.mercadolivre.dna.exception;
 
 public class ApiException extends Exception {
     protected int code;

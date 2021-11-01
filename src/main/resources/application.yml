@@ -5,7 +5,7 @@ spring:
     import: "optional:file:./dev.properties"
   data:
     neo4j:
-      database: ${NEO4J_DATABASE:meli}
+      database: ${NEO4J_DATABASE:neo4j}
   neo4j:
     uri: ${NEO4J_URI:bolt://54.159.139.0:7687}
     authentication:
