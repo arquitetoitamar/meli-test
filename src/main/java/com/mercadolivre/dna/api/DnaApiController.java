@@ -13,10 +13,12 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 
 @Slf4j
@@ -46,7 +48,10 @@ public class DnaApiController {
     @PostMapping(value = "/simian",
             produces = { "application/json" },
             consumes = { "application/json" })
+    @ExceptionHandler(ConstraintViolationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<DnaCreateResponseDto> analizeDna(@Parameter(in = ParameterIn.DEFAULT, description = "", required=true, schema=@Schema()) @Valid @RequestBody DnaCreateRequestDto request) {
+        log.info(request.toString());
         return ResponseEntity.ok().body(dnaService.createAnalysis(request));
     }
 }

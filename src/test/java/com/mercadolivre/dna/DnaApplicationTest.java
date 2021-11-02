@@ -12,7 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(properties = "classpath:application-test.yml")
+@SpringBootTest(properties = "classpath:application-test.yml", classes = {DatabaseConfigTest.class})
 @EnableConfigurationProperties
 @ComponentScan(value ={"com.mercadolivre.dna"})
 @ActiveProfiles("test")

@@ -2,8 +2,8 @@ package com.mercadolivre.dna.model;
 
 import com.mercadolivre.dna.util.DtoTest;
 import org.junit.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CodonTest extends DtoTest<Codon> {
 
@@ -20,5 +20,7 @@ public class CodonTest extends DtoTest<Codon> {
         Codon aaa = new Codon("AAA");
         assertEquals(build.getBasesNitrogenizes(), aaa.getBasesNitrogenizes());
         assertNotNull(aaa.toString());
+
+        assertFalse(aaa.equals("1"));
     }
 }

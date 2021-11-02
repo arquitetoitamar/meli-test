@@ -34,5 +34,4 @@ public class StatsApiController {
         log.info("Get Stats");
         return ResponseEntity.ok(statsService.getStats());
     }
-
 }

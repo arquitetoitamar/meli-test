@@ -1,9 +1,6 @@
 package com.mercadolivre.dna.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.validation.annotation.Validated;
@@ -14,6 +11,7 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 @Builder
 @Data
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 @Node("codon")

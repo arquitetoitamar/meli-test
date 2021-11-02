@@ -6,13 +6,10 @@ How to use Spring Boot, Spring Data, and Neo4j together.
 Spring Data Neo4j enables convenient integration of Neo4j in your Spring-based application.
 It provides object-graph mapping (OGM) functionality and other features common to the Spring Data projects.
 
- * This project uses the Needleman-Wunsch algorithm
- * to align nucleotide sequences.
- *
- * Reference:
- * https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm
- 
-### Documentation
+ * This project is fictitiously
+ * Not has a valid DNA estructure
+
+### Swagger Documentation
 https://agile-tor-46740.herokuapp.com/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
 ## The Stack
 

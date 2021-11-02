@@ -1,11 +1,7 @@
 package com.mercadolivre.dna.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.BeanUtils;
+import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
 /**
@@ -14,6 +10,7 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 @Builder
 @Data
+@EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
 public class StatsResponseDto {
@@ -25,8 +22,4 @@ public class StatsResponseDto {
 
   @JsonProperty("ratio")
   private Double ratio;
-
-  public StatsResponseDto(Object model) {
-      BeanUtils.copyProperties(model, this);
-  }
 }

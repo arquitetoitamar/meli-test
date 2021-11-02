@@ -13,6 +13,12 @@ spring:
       password: ${NEO4J_PASSWORD:secret123}
 server:
   port: ${PORT:8080}
+  error:
+    include-message: always
+    include-binding-errors: never
+    include-exception: false
+    include-trace: never
+    include-stacktrace: never
 logging:
   level:
     org:

@@ -1,10 +1,7 @@
 package com.mercadolivre.dna.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.validation.annotation.Validated;
 
 /**
@@ -13,6 +10,8 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 @Builder
 @Data
+@EqualsAndHashCode
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class DnaCreateResponseDto {

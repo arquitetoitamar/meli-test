@@ -8,8 +8,9 @@ public class ApiResponseMessageTest {
 
     @Test
     public void testValues() {
-        assertEquals("Unknown Error", ApiResponseMessage.UNKNOW_ERRO.getMessage());
-        assertEquals("Invalid Request", ApiResponseMessage.BAD_REQUEST.getMessage());
+        assertEquals("Unknown Error", ApiResponseMessage.UNKNOWN_ERRO.getMessage());
+        assertEquals("Invalid DNA Node Request, Pattern must be [ATCG]", ApiResponseMessage.BAD_REQUEST.getMessage());
+        assertEquals("Invalid DNA List, must be [ATCG,ATCG,ATCG,ATCG,ATCG,ATCG]", ApiResponseMessage.BAD_REQUEST_INVALID_LIST_DNA.getMessage());
     }
 
     @Test
@@ -18,8 +19,12 @@ public class ApiResponseMessageTest {
 
         assertEquals(ApiResponseMessage.BAD_REQUEST, bad_request);
 
-        ApiResponseMessage unknow_erro = ApiResponseMessage.valueOf("UNKNOW_ERRO");
+        ApiResponseMessage invalid_list = ApiResponseMessage.valueOf("BAD_REQUEST_INVALID_LIST_DNA");
 
-        assertEquals(ApiResponseMessage.UNKNOW_ERRO, unknow_erro);
+        assertEquals(ApiResponseMessage.BAD_REQUEST_INVALID_LIST_DNA, invalid_list);
+
+        ApiResponseMessage unknow_erro = ApiResponseMessage.valueOf("UNKNOWN_ERRO");
+
+        assertEquals(ApiResponseMessage.UNKNOWN_ERRO, unknow_erro);
     }
 }

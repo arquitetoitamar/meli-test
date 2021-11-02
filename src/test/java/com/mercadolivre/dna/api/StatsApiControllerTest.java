@@ -1,6 +1,7 @@
 package com.mercadolivre.dna.api;
 
 import com.mercadolivre.dna.dto.StatsResponseDto;
+import com.mercadolivre.dna.repository.StatsRepository;
 import com.mercadolivre.dna.service.impl.StatsServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +17,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class StatsApiControllerTest {
     @Mock
     private StatsServiceImpl statsService;
+    @Mock
+    private StatsRepository statsRepository;
     @InjectMocks
     private StatsApiController controller;
     @Test

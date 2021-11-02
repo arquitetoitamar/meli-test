@@ -38,5 +38,7 @@ public class NucleoTest extends DtoTest<Nucleo> {
         assertTrue(build.canEqual(aaa));
 
         assertEquals(aaa.hashCode(), build.hashCode());
+
+        assertFalse(aaa.equals("1"));
     }
 }

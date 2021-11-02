@@ -11,6 +11,7 @@ spring:
 #      password: ${NEO4J_PASSWORD:movies}
 server:
   port: ${PORT:8080}
+
 logging:
   level:
     org:
